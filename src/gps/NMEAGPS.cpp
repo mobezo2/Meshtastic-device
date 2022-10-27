@@ -100,12 +100,13 @@ bool NMEAGPS::lookForLocation()
     // At a minimum, use the fixQuality indicator in GPGGA (FIXME?)
     fixQual = reader.fixQuality();
 
+
 #ifndef TINYGPS_OPTION_NO_CUSTOM_FIELDS
     fixType = atoi(gsafixtype.value());  // will set to zero if no data
     DEBUG_MSG("FIX QUAL=%d, TYPE=%d\n", fixQual, fixType);
 #endif
 
-    // check if GPS has an acceptable lock
+    // check if GPS has an acceptable lock 
     if (! hasLock())
         return false;
 

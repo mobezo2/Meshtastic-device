@@ -118,12 +118,12 @@ static void drawIconScreen(const char *upperMsg, OLEDDisplay *display, OLEDDispl
     // needs to be drawn relative to x and y
 
     // draw centered icon left to right and centered above the one line of app text
-    display->drawXbm(x + (SCREEN_WIDTH - icon_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - icon_height) / 2 + 2,
-                     icon_width, icon_height, (const uint8_t *)icon_bits);
+    display->drawXbm(x + (SCREEN_WIDTH - fs_logo_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - fs_logo_height) / 2 + 2,
+                     fs_logo_width, fs_logo_height, (const uint8_t *)fs_logo_bits);
 
     display->setFont(FONT_MEDIUM);
     display->setTextAlignment(TEXT_ALIGN_LEFT);
-    const char *title = "meshtastic.org";
+    const char *title = "Faradine Systems";
     display->drawString(x + getStringCenteredX(title), y + SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM, title);
     display->setFont(FONT_SMALL);
 
